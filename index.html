@@ -2,30 +2,156 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Burstwise: Photo Cleaner</title>
-<meta name="description" content="Burstwise finds duplicate and near-identical photos on your iPhone and keeps the best shot. Everything stays on your device.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Burstwise: Photo Cleaner for iPhone</title>
+<meta name="description" content="Burstwise finds duplicate and near-identical photos on your iPhone, suggests the best shot, and clears out your biggest photos and videos. Everything stays on your device.">
+<meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Burstwise: Photo Cleaner">
+<meta property="og:description" content="Free up space: find near-identical shots, keep the best ones, and clear out your biggest photos and videos. Everything stays on your iPhone.">
+<meta property="og:image" content="https://bar2133.github.io/burstwise/screenshots/04-best-shot.jpg">
+<meta property="og:url" content="https://bar2133.github.io/burstwise/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-<header><img src="icon.png" alt=""><h1>Burstwise</h1></header>
-<p class="muted">Photo Cleaner for iPhone</p>
 
-<p>Burstwise finds duplicate and near-identical photos in your library, groups them, and suggests the best shot of each group, so you can free up space in a few taps.</p>
+<header class="nav glass">
+  <a class="brand" href="#top"><img src="icon.png" alt="">Burstwise</a>
+  <nav class="links" aria-label="Sections">
+    <a href="#features" class="optional">Features</a>
+    <a href="#pricing" class="optional">Pricing</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
 
-<div class="card">
-<ul>
-<li><strong>Duplicates:</strong> similar shots grouped together, with the sharpest, best-framed photo suggested as the one to keep.</li>
-<li><strong>Large Files:</strong> your biggest photos and videos, largest first.</li>
-<li><strong>Look closely:</strong> long press any photo to see it whole and zoom in.</li>
-<li><strong>Safe:</strong> nothing is deleted until you confirm, iOS asks again, and deleted items stay in Recently Deleted for 30 days.</li>
-<li><strong>Private:</strong> photos are analyzed on your iPhone. Nothing is uploaded, there's no account, and there's no tracking.</li>
-</ul>
-</div>
+<main id="top">
+  <div class="wrap hero">
+    <img class="icon" src="icon.png" alt="Burstwise app icon" width="112" height="112">
+    <h1>Free up space.<br><span class="accent">Keep the best.</span></h1>
+    <p class="sub">Burstwise finds duplicate and near-identical photos on your iPhone and suggests the best shot of each group.</p>
+    <div class="chips">
+      <span class="chip glass"><span class="tick">✓</span>On-device</span>
+      <span class="chip glass"><span class="tick">✓</span>No account</span>
+      <span class="chip glass"><span class="tick">✓</span>No ads</span>
+      <span class="chip glass"><span class="tick">✓</span>No subscription</span>
+    </div>
+    <div class="cta">
+      <!-- Replace with Apple's official "Download on the App Store" badge and the app's App Store link once it's live. -->
+      <a class="btn prominent" href="#pricing" aria-label="Coming soon to the App Store">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8zM14.2 5.7c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>
+        <span>Coming soon<span class="small">on the App Store</span></span>
+      </a>
+    </div>
+    <p class="price-note">Free to try · Burstwise Pro is a one-time $4.99 purchase · iOS 26 or later</p>
+  </div>
 
-<nav><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a></nav>
-<footer>Free to try, no ads, no subscription. Burstwise Pro is a one-time purchase. Requires iOS 26 or later.</footer>
+  <div class="shots" aria-label="Screenshots">
+    <div class="strip" id="strip" tabindex="0">
+      <figure><picture><source srcset="screenshots/01-start.webp" type="image/webp"><img src="screenshots/01-start.jpg" alt="Start: private, on-device scan" loading="lazy" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/02-home.webp" type="image/webp"><img src="screenshots/02-home.jpg" alt="Home after a scan: duplicates and large files" loading="lazy" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/03-gallery.webp" type="image/webp"><img src="screenshots/03-gallery.jpg" alt="Duplicates: every burst grouped" loading="lazy" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/04-best-shot.webp" type="image/webp"><img src="screenshots/04-best-shot.jpg" alt="A burst with the sharpest shot marked as best" loading="lazy" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/05-keep-two.webp" type="image/webp"><img src="screenshots/05-keep-two.jpg" alt="Keep more than one photo from a group" loading="lazy" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/06-review.webp" type="image/webp"><img src="screenshots/06-review.jpg" alt="Review summary before deleting" loading="lazy" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/07-large-files.webp" type="image/webp"><img src="screenshots/07-large-files.jpg" alt="Large Files: biggest videos and photos first" loading="lazy" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/08-history.webp" type="image/webp"><img src="screenshots/08-history.jpg" alt="History: space freed over time" loading="lazy" width="660" height="1434"></picture></figure>
+    </div>
+    <div class="strip-controls">
+      <button class="glass" type="button" data-dir="-1" aria-label="Previous screenshots">‹</button>
+      <button class="glass" type="button" data-dir="1" aria-label="Next screenshots">›</button>
+    </div>
+  </div>
+
+  <section id="features" class="wrap">
+    <h2>Bursts and repeats, sorted in minutes.</h2>
+    <p class="lead">One scan finds near-identical shots and your biggest files. You decide what goes.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="sf blue"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 5.5A2.5 2.5 0 0 0 13.5 3H6a3 3 0 0 0-3 3v7.5A2.5 2.5 0 0 0 5.5 16" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+        <h3>Duplicates, grouped</h3>
+        <p>Similar shots from the same moment land in one group. A similarity slider sets how alike they must be, and groups update instantly.</p>
+      </div>
+      <div class="card">
+        <span class="sf green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z" fill="currentColor"/></svg></span>
+        <h3>The best shot, suggested</h3>
+        <p>★ marks the sharpest, best-framed photo of each group. Keep it, or keep a few: tap any photo to keep or delete it.</p>
+      </div>
+      <div class="card">
+        <span class="sf orange"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11.5 9v7m-3-3 3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Large Files <span class="pro-chip glass">PRO</span></h3>
+        <p>Your biggest photos and videos, largest first, with sizes and durations, so a few taps free real space.</p>
+      </div>
+      <div class="card">
+        <span class="sf red"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5 4.5 9.5 9 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 9.5h9.5a5 5 0 0 1 0 10H11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <h3>Safe by design</h3>
+        <p>Nothing is marked until you choose. You see a summary first, iOS asks again, and deleted items stay in Recently Deleted for 30 days.</p>
+      </div>
+      <div class="card">
+        <span class="sf blue"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+        <h3>Private by design</h3>
+        <p>Photos are analyzed on your iPhone with Apple's Vision framework. Nothing is uploaded. No account, no ads, no tracking.</p>
+      </div>
+      <div class="card">
+        <span class="sf green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M3.5 4v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <h3>History</h3>
+        <p>See how much space you've freed over time, cleanup by cleanup.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="wrap">
+    <h2>Free to try. Pay once if you love it.</h2>
+    <p class="lead">No subscription, no ads.</p>
+    <div class="plans">
+      <div class="card plan">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <ul>
+          <li>Scan your whole library</li>
+          <li>Duplicate groups, ★ best shot, similarity slider and filters</li>
+          <li>Keep Best in any single group</li>
+          <li>Your first 20 deletions</li>
+        </ul>
+      </div>
+      <div class="card plan">
+        <h3>Burstwise Pro <span class="pro-chip glass">PRO</span></h3>
+        <div class="price">$4.99 <span class="per">one-time</span></div>
+        <ul>
+          <li>Unlimited cleanups</li>
+          <li>Keep Best in every group at once</li>
+          <li>Large Files</li>
+          <li>Family Sharing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Does Burstwise upload my photos?</summary><p>No. Everything runs on your iPhone. Burstwise makes no network requests of its own and collects no data. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
+    <details><summary>Will it delete anything without asking?</summary><p>No. You see a summary first, then iOS asks you to confirm. Deleted items go to Photos › Recently Deleted for 30 days.</p></details>
+    <details><summary>How does it pick the best shot?</summary><p>It prefers favorites, then photos without letterboxing, then the sharper, higher-resolution one. It's only a suggestion (★): you decide what to keep.</p></details>
+    <details><summary>What do I get with Pro?</summary><p>A one-time purchase that unlocks unlimited cleanups, Keep Best in every group at once, and Large Files. Restore it on any iPhone with the same Apple Account.</p></details>
+    <p class="muted">More answers on the <a href="support.html">Support page</a>.</p>
+  </section>
 </main>
+
+<footer class="wrap foot">
+  <nav aria-label="Footer"><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="mailto:bar2133@gmail.com">Contact</a></nav>
+  <span>Burstwise: Photo Cleaner · Requires iOS 26 or later · Photos in the screenshots are public-domain (CC0) demo photos.</span>
+  <span>iPhone is a trademark of Apple Inc., registered in the U.S. and other countries.</span>
+</footer>
+
+<script>
+  // Arrow buttons scroll the screenshot strip by one screen width; the strip also scrolls by swipe or keyboard.
+  const strip = document.getElementById('strip');
+  document.querySelectorAll('.strip-controls button').forEach(b => b.addEventListener('click', () => {
+    strip.scrollBy({ left: Number(b.dataset.dir) * strip.clientWidth * 0.8, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }));
+</script>
 </body>
 </html>
