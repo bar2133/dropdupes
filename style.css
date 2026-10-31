@@ -145,3 +145,7 @@ details p { margin: 0 0 16px; color: var(--muted); }
 .doc .card { margin: 16px 0; }
 .doc > nav { display: flex; gap: 18px; flex-wrap: wrap; margin: 32px 0 0; }
 .doc footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
+
+/* 44 pt touch targets for every standalone link (AGENTS.md rule 6); links inside running text stay inline. */
+.nav .brand, .nav .links a, .foot nav a, .doc > nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.foot nav, .doc > nav { gap: 4px 18px; }
