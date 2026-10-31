@@ -24,44 +24,64 @@
 <header><img src="icon.png" alt=""><h1>Support</h1></header>
 <p class="muted">Burstwise: Photo Cleaner</p>
 
-<p>Need help or found a problem? Email <a href="mailto:bar2133@gmail.com">bar2133@gmail.com</a>. Please include your iPhone model, iOS version and roughly how many photos you have.</p>
+<div class="card contact">
+  <p>Need help or found a problem? Email us and include your iPhone model, iOS version and roughly how many photos you have.</p>
+  <a class="btn prominent" href="mailto:bar2133@gmail.com">Email support</a>
+</div>
 
-<h2>Frequently asked questions</h2>
+<label class="search">
+  <span class="visually-hidden">Search questions</span>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  <input id="q" type="search" placeholder="Search questions" autocomplete="off">
+</label>
 
-<h3>What is free, and what does Burstwise Pro add?</h3>
-<p>Scanning, reviewing and your first 20 deletions are free. Burstwise Pro is a one-time purchase (not a subscription) that unlocks unlimited cleanups, Keep Best in every group at once, and Large Files.</p>
+<section class="help-group">
+<h2>Purchases</h2>
+<details><summary>What is free, and what does Burstwise Pro add?</summary><p>Scanning, reviewing and your first 20 deletions are free. Burstwise Pro is a one-time purchase (not a subscription) that unlocks unlimited cleanups, Keep Best in every group at once, and Large Files.</p></details>
+<details><summary>I bought Pro. How do I get it on a new iPhone?</summary><p>Open Settings › Burstwise Pro in the app and tap Restore Purchases, signed in with the same Apple Account. Family Sharing is supported.</p></details>
+</section>
 
-<h3>I bought Pro. How do I get it on a new iPhone?</h3>
-<p>Open Settings › Burstwise Pro in the app and tap Restore Purchases, signed in with the same Apple Account. Family Sharing is supported.</p>
+<section class="help-group">
+<h2>Photo access</h2>
+<details><summary>Why does Burstwise need access to my photos?</summary><p>To find duplicates it has to look at your photos. It does this on your iPhone; nothing is uploaded. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
+<details><summary>I chose "Limited Access". Why are some duplicates missing?</summary><p>Burstwise can only see the photos you selected. To scan everything, go to Settings → Burstwise → Photos and choose Full Access.</p></details>
+<details><summary>I turned access off. How do I turn it back on?</summary><p>Settings → Burstwise → Photos → Full Access.</p></details>
+</section>
 
-<h3>Why does Burstwise need access to my photos?</h3>
-<p>To find duplicates it has to look at your photos. It does this on your iPhone; nothing is uploaded. See the <a href="privacy.html">Privacy Policy</a>.</p>
+<section class="help-group">
+<h2>Deleting and recovering</h2>
+<details><summary>Will Burstwise delete anything without asking?</summary><p>No. Nothing is marked for deletion until you choose. Before anything is deleted, Burstwise shows a summary, then iOS asks you to confirm.</p></details>
+<details><summary>I deleted the wrong photo. Can I get it back?</summary><p>Yes. Open Photos → Albums → Recently Deleted and tap Recover. Items stay there for 30 days.</p></details>
+<details><summary>My storage didn't go up after deleting.</summary><p>Deleted items still take space while they're in Recently Deleted. Empty that album in Photos to free the space right away.</p></details>
+</section>
 
-<h3>I chose "Limited Access". Why are some duplicates missing?</h3>
-<p>Burstwise can only see the photos you selected. To scan everything, go to Settings → Burstwise → Photos and choose Full Access.</p>
+<section class="help-group">
+<h2>Scanning and best shots</h2>
+<details><summary>What does the similarity slider do?</summary><p>It sets how alike photos must be to be grouped. Higher means only near-identical shots; lower also groups photos that are merely similar. Changing it regroups instantly without rescanning.</p></details>
+<details><summary>How does Burstwise choose the best shot?</summary><p>It prefers favorites, then photos that aren't letterboxed, then the sharper one, the higher resolution, the larger file, and finally the oldest. It's only a suggestion (★); you decide what to keep.</p></details>
+<details><summary>The first scan is slow.</summary><p>The first scan analyzes every photo; later scans only look at new or edited ones. Keep Burstwise open while it scans. Photos stored only in iCloud may need to download first.</p></details>
+</section>
 
-<h3>I turned access off. How do I turn it back on?</h3>
-<p>Settings → Burstwise → Photos → Full Access.</p>
-
-<h3>Will Burstwise delete anything without asking?</h3>
-<p>No. Nothing is marked for deletion until you choose. Before anything is deleted, Burstwise shows a summary, then iOS asks you to confirm.</p>
-
-<h3>I deleted the wrong photo. Can I get it back?</h3>
-<p>Yes. Open Photos → Albums → Recently Deleted and tap Recover. Items stay there for 30 days.</p>
-
-<h3>My storage didn't go up after deleting.</h3>
-<p>Deleted items still take space while they're in Recently Deleted. Empty that album in Photos to free the space right away.</p>
-
-<h3>What does the similarity slider do?</h3>
-<p>It sets how alike photos must be to be grouped. Higher means only near-identical shots; lower also groups photos that are merely similar. Changing it regroups instantly without rescanning.</p>
-
-<h3>How does Burstwise choose the best shot?</h3>
-<p>It prefers favorites, then photos that aren't letterboxed, then the sharper one, the higher resolution, the larger file, and finally the oldest. It's only a suggestion (★); you decide what to keep.</p>
-
-<h3>The first scan is slow.</h3>
-<p>The first scan analyzes every photo; later scans only look at new or edited ones. Keep Burstwise open while it scans. Photos stored only in iCloud may need to download first.</p>
+<p class="muted empty" id="empty" hidden>No matching questions. Email <a href="mailto:bar2133@gmail.com">bar2133@gmail.com</a> and we'll help.</p>
 
 <nav><a href="index.html">Burstwise</a><a href="privacy.html">Privacy Policy</a></nav>
 </main>
+<script>
+  // Filters the questions as you type; matching answers open.
+  const q = document.getElementById('q'), empty = document.getElementById('empty');
+  q.addEventListener('input', () => {
+    const term = q.value.trim().toLowerCase();
+    let any = false;
+    document.querySelectorAll('.help-group').forEach(g => {
+      let shown = 0;
+      g.querySelectorAll('details').forEach(d => {
+        const hit = !term || d.textContent.toLowerCase().includes(term);
+        d.hidden = !hit; d.open = Boolean(term) && hit; shown += hit;
+      });
+      g.hidden = !shown; any ||= shown > 0;
+    });
+    empty.hidden = any;
+  });
+</script>
 </body>
 </html>

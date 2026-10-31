@@ -27,6 +27,7 @@
 <header class="nav glass">
   <a class="brand" href="#top"><img src="icon.png" alt="">Burstwise</a>
   <nav class="links" aria-label="Sections">
+    <a href="#how" class="optional">How it works</a>
     <a href="#features" class="optional">Features</a>
     <a href="#pricing" class="optional">Pricing</a>
     <a href="support.html">Support</a>
@@ -57,9 +58,9 @@
 
   <div class="shots" aria-label="Screenshots">
     <div class="strip" id="strip" tabindex="0">
-      <figure><picture><source srcset="screenshots/01-start.webp" type="image/webp"><img src="screenshots/01-start.jpg" alt="Start: private, on-device scan" loading="lazy" width="660" height="1434"></picture></figure>
-      <figure><picture><source srcset="screenshots/02-home.webp" type="image/webp"><img src="screenshots/02-home.jpg" alt="Home after a scan: duplicates and large files" loading="lazy" width="660" height="1434"></picture></figure>
-      <figure><picture><source srcset="screenshots/03-gallery.webp" type="image/webp"><img src="screenshots/03-gallery.jpg" alt="Duplicates: every burst grouped" loading="lazy" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/01-start.webp" type="image/webp"><img src="screenshots/01-start.jpg" alt="Start: private, on-device scan" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/02-home.webp" type="image/webp"><img src="screenshots/02-home.jpg" alt="Home after a scan: duplicates and large files" width="660" height="1434"></picture></figure>
+      <figure><picture><source srcset="screenshots/03-gallery.webp" type="image/webp"><img src="screenshots/03-gallery.jpg" alt="Duplicates: every burst grouped" width="660" height="1434"></picture></figure>
       <figure><picture><source srcset="screenshots/04-best-shot.webp" type="image/webp"><img src="screenshots/04-best-shot.jpg" alt="A burst with the sharpest shot marked as best" loading="lazy" width="660" height="1434"></picture></figure>
       <figure><picture><source srcset="screenshots/05-keep-two.webp" type="image/webp"><img src="screenshots/05-keep-two.jpg" alt="Keep more than one photo from a group" loading="lazy" width="660" height="1434"></picture></figure>
       <figure><picture><source srcset="screenshots/06-review.webp" type="image/webp"><img src="screenshots/06-review.jpg" alt="Review summary before deleting" loading="lazy" width="660" height="1434"></picture></figure>
@@ -67,10 +68,33 @@
       <figure><picture><source srcset="screenshots/08-history.webp" type="image/webp"><img src="screenshots/08-history.jpg" alt="History: space freed over time" loading="lazy" width="660" height="1434"></picture></figure>
     </div>
     <div class="strip-controls">
-      <button class="glass" type="button" data-dir="-1" aria-label="Previous screenshots">‹</button>
-      <button class="glass" type="button" data-dir="1" aria-label="Next screenshots">›</button>
+      <button class="glass arrow" type="button" data-dir="-1" aria-label="Previous screenshots">‹</button>
+      <div class="dots glass" id="dots" role="group" aria-label="Go to screenshot"></div>
+      <button class="glass arrow" type="button" data-dir="1" aria-label="Next screenshots">›</button>
     </div>
   </div>
+
+  <section id="how" class="wrap">
+    <h2>Three steps. A lighter library.</h2>
+    <p class="lead">Most cleanups take a few minutes, and nothing goes without your say-so.</p>
+    <ol class="steps">
+      <li class="card">
+        <span class="num">1</span>
+        <h3>Scan</h3>
+        <p>Burstwise looks through your library on your iPhone and groups near-identical shots and repeats.</p>
+      </li>
+      <li class="card">
+        <span class="num">2</span>
+        <h3>Review</h3>
+        <p>★ suggests the best photo of each group. Tap to keep or delete, or use Keep Best to decide a group in one tap.</p>
+      </li>
+      <li class="card">
+        <span class="num">3</span>
+        <h3>Free up space</h3>
+        <p>Check the summary, confirm in iOS, done. Changed your mind? Recently Deleted keeps everything for 30 days.</p>
+      </li>
+    </ol>
+  </section>
 
   <section id="features" class="wrap">
     <h2>Bursts and repeats, sorted in minutes.</h2>
@@ -109,24 +133,42 @@
     </div>
   </section>
 
+  <section id="privacy" class="wrap">
+    <div class="card band">
+      <span class="sf blue big"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+      <h2>Your photos never leave your iPhone.</h2>
+      <p class="lead">No servers, no account, no analytics. In App Store terms: Data Not Collected.</p>
+      <dl class="stats">
+        <div><dt>On-device</dt><dd>Analysis runs on your iPhone with Apple's Vision framework</dd></div>
+        <div><dt>0</dt><dd>uploads, trackers or ads</dd></div>
+        <div><dt>30 days</dt><dd>to recover anything from Recently Deleted</dd></div>
+        <div><dt>$4.99</dt><dd>once for Pro, never a subscription</dd></div>
+      </dl>
+      <a class="more" href="privacy.html">Read the Privacy Policy ›</a>
+    </div>
+  </section>
+
   <section id="pricing" class="wrap">
     <h2>Free to try. Pay once if you love it.</h2>
-    <p class="lead">No subscription, no ads.</p>
+    <p class="lead">No subscription, no ads. Pro works on every iPhone signed in to your Apple Account.</p>
     <div class="plans">
       <div class="card plan">
         <h3>Free</h3>
+        <p class="plan-sub">Everything you need to try it</p>
         <div class="price">$0</div>
-        <ul>
+        <ul class="ticks">
           <li>Scan your whole library</li>
           <li>Duplicate groups, ★ best shot, similarity slider and filters</li>
           <li>Keep Best in any single group</li>
           <li>Your first 20 deletions</li>
         </ul>
       </div>
-      <div class="card plan">
+      <div class="card plan pro">
+        <span class="badge">Pay once</span>
         <h3>Burstwise Pro <span class="pro-chip glass">PRO</span></h3>
+        <p class="plan-sub">Clean your whole library</p>
         <div class="price">$4.99 <span class="per">one-time</span></div>
-        <ul>
+        <ul class="ticks">
           <li>Unlimited cleanups</li>
           <li>Keep Best in every group at once</li>
           <li>Large Files</li>
@@ -144,20 +186,65 @@
     <details><summary>What do I get with Pro?</summary><p>A one-time purchase that unlocks unlimited cleanups, Keep Best in every group at once, and Large Files. Restore it on any iPhone with the same Apple Account.</p></details>
     <p class="muted">More answers on the <a href="support.html">Support page</a>.</p>
   </section>
+
+  <section class="wrap">
+    <div class="card cta-band">
+      <img src="icon.png" alt="" width="72" height="72">
+      <h2>Free up space. Keep the best.</h2>
+      <p class="lead">Burstwise is coming soon to the App Store for iPhone.</p>
+      <div class="cta">
+        <span class="btn prominent" aria-label="Coming soon to the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8zM14.2 5.7c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>
+          <span>Coming soon<span class="small">on the App Store</span></span>
+        </span>
+        <a class="btn glass" href="mailto:bar2133@gmail.com">Ask a question</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="wrap foot">
+  <a class="brand" href="#top"><img src="icon.png" alt="" width="28" height="28">Burstwise</a>
   <nav aria-label="Footer"><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="mailto:bar2133@gmail.com">Contact</a></nav>
   <span>Burstwise: Photo Cleaner · Requires iOS 26 or later · Photos in the screenshots are public-domain (CC0) demo photos.</span>
   <span>iPhone is a trademark of Apple Inc., registered in the U.S. and other countries.</span>
 </footer>
 
 <script>
-  // Arrow buttons scroll the screenshot strip by one screen width; the strip also scrolls by swipe or keyboard.
-  const strip = document.getElementById('strip');
-  document.querySelectorAll('.strip-controls button').forEach(b => b.addEventListener('click', () => {
-    strip.scrollBy({ left: Number(b.dataset.dir) * strip.clientWidth * 0.8, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  // Screenshot strip: arrows scroll by most of a screen, dots jump to a screenshot and show where you are,
+  // and arrows disable at the ends. The strip also scrolls by swipe or keyboard.
+  const strip = document.getElementById('strip'), dots = document.getElementById('dots');
+  const shots = [...strip.querySelectorAll('figure')];
+  const motion = () => matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  const [prev, next] = document.querySelectorAll('.strip-controls .arrow');
+  [prev, next].forEach(b => b.addEventListener('click', () => {
+    strip.scrollBy({ left: Number(b.dataset.dir) * strip.clientWidth * 0.8, behavior: motion() });
   }));
+  shots.forEach((f, i) => {
+    const d = document.createElement('button');
+    d.type = 'button'; d.setAttribute('aria-label', f.querySelector('img').alt);
+    d.addEventListener('click', () => f.scrollIntoView({ behavior: motion(), block: 'nearest', inline: 'center' }));
+    dots.append(d);
+  });
+  const sync = () => {
+    const mid = strip.scrollLeft + strip.clientWidth / 2;
+    let cur = 0;
+    shots.forEach((f, i) => { if (Math.abs(f.offsetLeft + f.offsetWidth / 2 - mid) < Math.abs(shots[cur].offsetLeft + shots[cur].offsetWidth / 2 - mid)) cur = i; });
+    [...dots.children].forEach((d, i) => d.toggleAttribute('aria-current', i === cur));
+    prev.disabled = strip.scrollLeft < 4;
+    next.disabled = strip.scrollLeft + strip.clientWidth > strip.scrollWidth - 4;
+  };
+  strip.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+  addEventListener('resize', sync); sync();
+
+  // Nav: highlight the section on screen.
+  const links = [...document.querySelectorAll('.nav .links a[href^="#"]')];
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.toggleAttribute('aria-current', a.hash === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  links.forEach(a => { const t = document.querySelector(a.hash); if (t) io.observe(t); });
+  document.querySelectorAll('.hero, .shots, main > section:not([id]), #privacy, #faq').forEach(t => io.observe(t));
 </script>
 </body>
 </html>
