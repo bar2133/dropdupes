@@ -17,14 +17,13 @@
   --r-card: 26px; --r-l: 22px;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000; --surface: #1c1c1e; --text: #ffffff; --muted: rgba(235, 235, 245, .62); --sep: rgba(84, 84, 88, .6);
-    --brand: #0091ff; --keep: #30d158; --delete: #ff4245; --warning: #ff9230;
-    --glass: rgba(40, 40, 44, .55); --glass-rim: rgba(255, 255, 255, .16); --glass-edge: rgba(0, 0, 0, .5);
-    --wash-1: rgba(0, 145, 255, .22); --wash-2: rgba(48, 209, 88, .12); --wash-3: rgba(255, 146, 48, .12);
-    color-scheme: dark;
-  }
+/* dark: only when the visitor turns it on with the nav switch (theme.js); light is the default */
+:root[data-theme="dark"] {
+  --bg: #000000; --surface: #1c1c1e; --text: #ffffff; --muted: rgba(235, 235, 245, .62); --sep: rgba(84, 84, 88, .6);
+  --brand: #0091ff; --keep: #30d158; --delete: #ff4245; --warning: #ff9230;
+  --glass: rgba(40, 40, 44, .55); --glass-rim: rgba(255, 255, 255, .16); --glass-edge: rgba(0, 0, 0, .5);
+  --wash-1: rgba(0, 145, 255, .22); --wash-2: rgba(48, 209, 88, .12); --wash-3: rgba(255, 146, 48, .12);
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -65,7 +64,16 @@ img { max-width: 100%; display: block; }
 .nav .links a { color: var(--text); font-size: 15px; padding: 8px 12px; border-radius: 999px; }
 .nav .links a:hover { background: var(--sep); text-decoration: none; }
 .nav .links a[aria-current] { color: var(--brand); background: color-mix(in srgb, var(--brand) 13%, transparent); }
-@media (max-width: 560px) { .nav .links a.optional { display: none; } }
+@media (max-width: 700px) { .nav .links a.optional { display: none; } }
+@media (max-width: 400px) { .nav { gap: 6px; } .nav .links a { padding-inline: 9px; } } /* brand, two links and the theme switch on one row at 375 pt */
+.theme-toggle {
+  flex: none; width: 44px; height: 44px; border: 0; border-radius: 50%; padding: 0; display: grid; place-items: center;
+  background: none; color: var(--text); cursor: pointer;
+}
+.theme-toggle:hover { background: var(--sep); }
+.theme-toggle svg { width: 22px; height: 22px; }
+.theme-toggle .sun, [data-theme="dark"] .theme-toggle .moon { display: none; }
+[data-theme="dark"] .theme-toggle .sun { display: block; }
 
 .wrap { width: min(980px, 100%); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
 
@@ -106,7 +114,6 @@ img { max-width: 100%; display: block; }
 .dots button { width: 22px; height: 44px; border: 0; padding: 0; background: none; cursor: pointer; display: grid; place-items: center; }
 .dots button::before { content: ""; width: 7px; height: 7px; border-radius: 999px; background: var(--muted); opacity: .5; transition: width .25s, opacity .25s, background-color .25s; }
 .dots button[aria-current]::before { width: 18px; opacity: 1; background: var(--brand); }
-@media (max-width: 420px) { .dots button { width: 16px; } }
 
 /* sections */
 section { padding-block: 48px 8px; }
@@ -204,7 +211,7 @@ details p { margin: 0 0 16px; color: var(--muted); }
 .doc footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
 
 /* 44 pt touch targets for every standalone link (AGENTS.md rule 6); links inside running text stay inline. */
-.nav .brand, .nav .links a, .foot nav a, .doc > nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.nav .brand, .nav .links a, .foot .brand, .foot nav a, .doc > nav a { display: inline-flex; align-items: center; min-height: 44px; }
 .foot nav, .doc > nav { gap: 4px 18px; }
 
 /* content rises in as it scrolls into view (browsers with scroll-driven animations; never with Reduce Motion) */
