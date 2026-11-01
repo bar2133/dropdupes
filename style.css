@@ -5,9 +5,10 @@
   --bg: #f2f2f7;              /* systemGroupedBackground */
   --surface: #ffffff;         /* secondarySystemGroupedBackground */
   --text: #000000;            /* label */
-  --muted: rgba(60, 60, 67, .62); /* secondaryLabel */
+  --muted: rgba(60, 60, 67, .80); /* secondaryLabel, darkened to pass WCAG AA 4.5:1 on the grouped background */
   --sep: rgba(60, 60, 67, .18);
-  --brand: #0088ff; --keep: #34c759; --delete: #ff383c; --warning: #ff8d28; /* iOS 26+ system colors */
+  /* iOS 26+ increased-contrast system colors in light mode, so text and white labels on them pass WCAG AA 4.5:1 */
+  --brand: #0066cc; --keep: #008932; --delete: #ff383c; --warning: #c55300;
   --glass: rgba(255, 255, 255, .58);
   --glass-rim: rgba(255, 255, 255, .9);
   --glass-edge: rgba(0, 0, 0, .08);
@@ -15,6 +16,7 @@
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", system-ui, sans-serif;
   --rounded: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
   --r-card: 26px; --r-l: 22px;
+  --on-tint: #ffffff;         /* label on brand, keep and warning fills */
   color-scheme: light;
 }
 /* dark: only when the visitor turns it on with the nav switch (theme.js); light is the default */
@@ -24,6 +26,15 @@
   --glass: rgba(40, 40, 44, .55); --glass-rim: rgba(255, 255, 255, .16); --glass-edge: rgba(0, 0, 0, .5);
   --wash-1: rgba(0, 145, 255, .22); --wash-2: rgba(48, 209, 88, .12); --wash-3: rgba(255, 146, 48, .12);
   color-scheme: dark;
+}
+/* Increase Contrast: stronger text, separators and glass, in both themes */
+@media (prefers-contrast: more) {
+  :root { --muted: rgba(60, 60, 67, .92); --sep: rgba(60, 60, 67, .45); --glass: rgba(255, 255, 255, .88); --glass-edge: rgba(0, 0, 0, .3); }
+  :root[data-theme="dark"] {
+    --muted: rgba(235, 235, 245, .82); --sep: rgba(235, 235, 245, .35); --glass: rgba(28, 28, 30, .9); --glass-rim: rgba(255, 255, 255, .35);
+    --brand: #5cb8ff; --keep: #4ad968; --warning: #ffa056; --delete: #ff6165;
+    --on-tint: #000000;       /* iOS draws black labels on the lighter increased-contrast fills */
+  }
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -89,7 +100,7 @@ img { max-width: 100%; display: block; }
 .cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
 .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; font-weight: 600; font-size: 17px; color: var(--text); }
 .btn:hover { text-decoration: none; }
-.btn.prominent { background: var(--brand); color: #fff; box-shadow: inset 0 1px .5px rgba(255,255,255,.45), inset 0 -1px 1.5px rgba(0,0,0,.15); }
+.btn.prominent { background: var(--brand); color: var(--on-tint); box-shadow: inset 0 1px .5px rgba(255,255,255,.45), inset 0 -1px 1.5px rgba(0,0,0,.15); }
 .btn .small { display: block; font-size: 12px; font-weight: 500; opacity: .85; line-height: 1.1; }
 .btn svg { width: 22px; height: 22px; flex: none; }
 .price-note { font-size: 14px; color: var(--muted); margin: 0; }
@@ -140,7 +151,7 @@ h2 { font-size: clamp(28px, 5vw, 40px); line-height: 1.1; letter-spacing: -.025e
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; counter-reset: none; }
 .steps .num {
   width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
-  font: 700 20px/1 var(--rounded); color: #fff; background: var(--brand);
+  font: 700 20px/1 var(--rounded); color: var(--on-tint); background: var(--brand);
 }
 .steps li:nth-child(2) .num { background: var(--keep); }
 .steps li:nth-child(3) .num { background: var(--warning); }
@@ -161,7 +172,7 @@ h2 { font-size: clamp(28px, 5vw, 40px); line-height: 1.1; letter-spacing: -.025e
 .plan-sub { margin: 2px 0 0 !important; font-size: 15px; }
 .plan.pro { box-shadow: inset 0 0 0 2px var(--brand); }
 .plan .badge {
-  position: absolute; top: -12px; left: 22px; font-size: 12px; font-weight: 700; color: #fff; background: var(--brand);
+  position: absolute; top: -12px; left: 22px; font-size: 12px; font-weight: 700; color: var(--on-tint); background: var(--brand);
   padding: 4px 10px; border-radius: 999px;
 }
 .ticks { list-style: none; padding: 0 !important; }
