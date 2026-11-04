@@ -8,7 +8,7 @@
   --muted: rgba(60, 60, 67, .80); /* secondaryLabel, darkened to pass WCAG AA 4.5:1 on the grouped background */
   --sep: rgba(60, 60, 67, .18);
   /* iOS 26+ increased-contrast system colors in light mode, so text and white labels on them pass WCAG AA 4.5:1 */
-  --brand: #0066cc; --keep: #008932; --delete: #ff383c; --warning: #c55300;
+  --brand: #0066cc; --keep: #008932; --delete: #ff383c; --warning: #c55300; --filter: #a31fbd;
   --glass: rgba(255, 255, 255, .58);
   --glass-rim: rgba(255, 255, 255, .9);
   --glass-edge: rgba(0, 0, 0, .08);
@@ -22,7 +22,7 @@
 /* dark: only when the visitor turns it on with the nav switch (theme.js); light is the default */
 :root[data-theme="dark"] {
   --bg: #000000; --surface: #1c1c1e; --text: #ffffff; --muted: rgba(235, 235, 245, .62); --sep: rgba(84, 84, 88, .6);
-  --brand: #0091ff; --keep: #30d158; --delete: #ff4245; --warning: #ff9230;
+  --brand: #0091ff; --keep: #30d158; --delete: #ff4245; --warning: #ff9230; --filter: #db34f2;
   --glass: rgba(40, 40, 44, .55); --glass-rim: rgba(255, 255, 255, .16); --glass-edge: rgba(0, 0, 0, .5);
   --wash-1: rgba(0, 145, 255, .22); --wash-2: rgba(48, 209, 88, .12); --wash-3: rgba(255, 146, 48, .12);
   color-scheme: dark;
@@ -32,7 +32,7 @@
   :root { --muted: rgba(60, 60, 67, .92); --sep: rgba(60, 60, 67, .45); --glass: rgba(255, 255, 255, .88); --glass-edge: rgba(0, 0, 0, .3); }
   :root[data-theme="dark"] {
     --muted: rgba(235, 235, 245, .82); --sep: rgba(235, 235, 245, .35); --glass: rgba(28, 28, 30, .9); --glass-rim: rgba(255, 255, 255, .35);
-    --brand: #5cb8ff; --keep: #4ad968; --warning: #ffa056; --delete: #ff6165;
+    --brand: #5cb8ff; --keep: #4ad968; --warning: #ffa056; --filter: #e66ff7; --delete: #ff6165;
     --on-tint: #000000;       /* iOS draws black labels on the lighter increased-contrast fills */
   }
 }
@@ -143,6 +143,7 @@ h2 { font-size: clamp(28px, 5vw, 40px); line-height: 1.1; letter-spacing: -.025e
 .sf.blue { color: var(--brand); background: color-mix(in srgb, var(--brand) 13%, transparent); }
 .sf.green { color: var(--keep); background: color-mix(in srgb, var(--keep) 15%, transparent); }
 .sf.orange { color: var(--warning); background: color-mix(in srgb, var(--warning) 15%, transparent); }
+.sf.purple { color: var(--filter); background: color-mix(in srgb, var(--filter) 13%, transparent); }
 .sf.big { width: 56px; height: 56px; }
 .sf.big svg { width: 28px; height: 28px; }
 .sf.red { color: var(--delete); background: color-mix(in srgb, var(--delete) 13%, transparent); }
