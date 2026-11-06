@@ -1,4 +1,4 @@
-/* Burstwise site — iOS 26/27 look: system colors, SF Pro (system font on Apple devices), Liquid Glass for the
+/* DropDupes site — iOS 26/27 look: system colors, SF Pro (system font on Apple devices), Liquid Glass for the
    floating controls only (nav bar, chips, buttons), content cards solid. Light and dark. */
 :root {
   interpolate-size: allow-keywords; /* lets FAQ answers animate to their natural height */
